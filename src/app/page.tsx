@@ -1,11 +1,11 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Vision from './components/Vision';
-import Team from './components/Team';
-import Research from './components/Research';
-import Partners from './components/Partners';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Vision from '../components/Vision';
+import Team from '../components/Team';
+import Research from '../components/Research';
+import Partners from '../components/Partners';
 
-function App() {
+export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -29,5 +29,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

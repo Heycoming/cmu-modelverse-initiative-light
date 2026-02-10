@@ -1,10 +1,14 @@
+'use client';
+
+import React from 'react';
+
 const Partners = () => {
   const partners = [
-    { name: "Carnegie Mellon University", logo: "https://www.cmu.edu/common/standard-v2/images/cmu-wordmark-horizontal-r.png" },
+    { name: "Carnegie Mellon University", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Carnegie_Mellon_University_wordmark.svg" },
     { name: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
     { name: "Google DeepMind", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Google_DeepMind_logo.svg" },
     { name: "Y Combinator", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Y_Combinator_logo.svg" },
-    { name: "Stanford University", logo: "https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/Stanford-Logo-Stacked.png" }
+    { name: "Stanford University", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Stanford_University_wordmark.svg" }
   ];
 
   return (

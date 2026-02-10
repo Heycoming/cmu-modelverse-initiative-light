@@ -1,3 +1,6 @@
+'use client';
+
+import React from 'react';
 import { Linkedin, ExternalLink } from 'lucide-react';
 
 const Team = () => {
@@ -26,7 +29,7 @@ const Team = () => {
     {
       name: "Prof. Tai Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
-      bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
+      bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },
     {
@@ -60,19 +63,19 @@ const Team = () => {
 
   return (
     <section id="team" className="py-24 bg-black relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-modelverse-accent/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#6d28d9]/10 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4">Leadership</h2>
-          <div className="h-1 w-20 bg-cmu-red"></div>
+          <h2 className="text-4xl font-bold mb-4 text-white">Leadership</h2>
+          <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {leadership.map((member, i) => (
-            <div key={i} className="glass-card p-8 group hover:border-modelverse-accent/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-modelverse-glow transition-colors">{member.name}</h3>
-              <p className="text-cmu-red font-medium mb-4">{member.role}</p>
+            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#6d28d9]/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-[#8b5cf6] transition-colors text-white">{member.name}</h3>
+              <p className="text-[#C41230] font-medium mb-4">{member.role}</p>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 {member.bio}
               </p>
@@ -93,15 +96,15 @@ const Team = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4">Advisory Board</h2>
-          <div className="h-1 w-20 bg-cmu-red"></div>
+          <h2 className="text-4xl font-bold mb-4 text-white">Advisory Board</h2>
+          <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {advisors.map((member, i) => (
-            <div key={i} className="glass-card p-8 group hover:border-modelverse-accent/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-modelverse-glow transition-colors">{member.name}</h3>
-              <p className="text-cmu-red font-medium mb-4">{member.role}</p>
+            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#6d28d9]/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-[#8b5cf6] transition-colors text-white">{member.name}</h3>
+              <p className="text-[#C41230] font-medium mb-4">{member.role}</p>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 {member.bio}
               </p>
@@ -122,14 +125,14 @@ const Team = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4">Research Fellows</h2>
-          <div className="h-1 w-20 bg-cmu-red"></div>
+          <h2 className="text-4xl font-bold mb-4 text-white">Research Fellows</h2>
+          <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {fellows.map((fellow, i) => (
             <div key={i} className="flex items-center p-4 rounded-xl border border-white/5 hover:bg-white/5 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-cmu-red mr-4"></div>
+              <div className="w-2 h-2 rounded-full bg-[#C41230] mr-4"></div>
               <div>
                 <p className="font-semibold text-gray-200">{fellow.name}</p>
                 <p className="text-xs text-gray-500">{fellow.institution}</p>
