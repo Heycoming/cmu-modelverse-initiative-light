@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  @apply bg-modelverse-bg text-gray-100 font-sans antialiased;
+}
+
+.glass-card {
+  @apply bg-modelverse-card/50 backdrop-blur-md border border-white/10 rounded-2xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500;
+}
+
+.accent-gradient {
+  @apply bg-gradient-to-r from-modelverse-accent to-cmu-red;
+}
