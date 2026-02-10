@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Vision from './components/Vision';
+import Team from './components/Team';
+import Research from './components/Research';
+import Partners from './components/Partners';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <Vision />
+        <Team />
+        <Research />
+        <Partners />
+      </main>
+      
+      <footer className="py-12 bg-black text-center text-gray-600 text-sm border-t border-white/5">
+        <div className="container mx-auto px-6">
+          <p>© {new Date().getFullYear()} i³ × CMU Modelverse Dev Initiative. All rights reserved.</p>
+          <div className="mt-4 flex justify-center gap-6">
+            <a href="https://intelligencecubed.io/" className="hover:text-white transition-colors">Intelligence Cubed</a>
+            <a href="https://www.cs.cmu.edu/research/" className="hover:text-white transition-colors">CMU Research</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

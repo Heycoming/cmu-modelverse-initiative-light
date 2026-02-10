@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-cmu-red: #C41230;
+  --color-cmu-dark: #1a1a1a;
+  --color-cmu-gray: #333333;
+  --color-modelverse-bg: #050505;
+  --color-modelverse-card: #121212;
+  --color-modelverse-accent: #6d28d9;
+  --color-modelverse-glow: #8b5cf6;
+}
 
 :root {
   color-scheme: dark;
