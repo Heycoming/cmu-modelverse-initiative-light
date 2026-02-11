@@ -17,10 +17,9 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#C41230] rounded-lg flex items-center justify-center font-bold text-white">i³</div>
-          <span className="text-xl font-bold tracking-tighter text-white">Modelverse Initiative</span>
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <img src="/media/navbar-logo.png" alt="Intelligence Cubed" className="h-8 md:h-10 w-auto object-contain" />
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">

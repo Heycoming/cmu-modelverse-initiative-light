@@ -8,18 +8,21 @@ const Team = () => {
     {
       name: "Fernando Jia",
       role: "CEO",
+      image: "/media/avatar-fernando.png",
       bio: "A seasoned professional with a rich background in tech and business. Guest lecturer at Carnegie Mellon University and University of Michigan. Ex-investor & fellow at Y Combinator, ex-McKinsey consultant, ex-IBD analyst at CITIC Securities. Alumnus of UC Berkeley's Center for Responsible Decentralized Intelligence.",
       links: { linkedin: "https://www.linkedin.com/in/fernando-j/" }
     },
     {
-      name: "Tianqin Li",
+      name: "Dr. Tianqin Li",
       role: "Chief Scientist",
+      image: "/media/avatar-tianqin-li.png",
       bio: "PhD in CMU CS Department under Zico Kolter and Tai Sing Lee. Collaborated with Ruslan Salakhutdinov. Fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation. Guest lecturer in multiple CMU AI courses.",
       links: { linkedin: "https://www.linkedin.com/in/tianqin-li-b16299170/", website: "http://crazy-jack.github.io/works.html" }
     },
     {
       name: "Florence Li",
       role: "Executive Team",
+      image: "",
       bio: "Creative Technology Executive and Stanford CS master specializing in Machine Learning & Blockchain. Scaled MetaY's GPU DePIN platform. Introduced $10M+ in AI and Web3 investments. Frequent speaker at tech summits.",
       links: { linkedin: "https://www.linkedin.com/in/florence-li-18b657206/" }
     }
@@ -27,8 +30,9 @@ const Team = () => {
 
   const advisors = [
     {
-      name: "Prof. Tai Sing Lee",
+      name: "Prof. Tai-Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
+      image: "/media/avatar-tai-sing-lee.png",
       bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },
@@ -47,23 +51,23 @@ const Team = () => {
   ];
 
   const fellows = [
-    { name: "Xuandong Zhao", institution: "UC Berkeley RDI" },
-    { name: "Yuejiang Liu", institution: "Stanford AI Lab" },
-    { name: "Yaqi Xie", institution: "CMU Robotics Institute" },
-    { name: "Shiyi Du", institution: "CMU Computational Biology" },
-    { name: "Jiayuan Liu", institution: "CMU Computer Science" },
-    { name: "Yitong Li", institution: "Stanford Computational Science" },
-    { name: "Chengfeng Mao", institution: "MIT" },
-    { name: "Jason Xiaotian Dou", institution: "Harvard Medical School" },
-    { name: "Jiayun Peter Wang", institution: "Caltech" },
-    { name: "Shi Feng", institution: "Harvard CS" },
-    { name: "Xueying Ding", institution: "CMU Machine Learning & Public Policy" },
-    { name: "Shang Gao", institution: "Caltech" }
+    { name: "Xuandong Zhao", institution: "postdoc, UC Berkeley RDI" },
+    { name: "Yuejiang Liu", institution: "postdoc, Stanford AI Lab" },
+    { name: "Yaqi Xie", institution: "postdoc, CMU Robotics Institute" },
+    { name: "Shiyi Du", institution: "Ph.D., CMU Computational Biology" },
+    { name: "Jiayuan Liu", institution: "Ph.D., CMU Computer Science" },
+    { name: "Shang Gao", institution: "Ph.D., Caltech Computational Science" },
+    { name: "Yitong Li", institution: "Ph.D., Stanford Computational Science" },
+    { name: "Chengfeng Mao", institution: "Ph.D., MIT" },
+    { name: "Jason Dou", institution: "postdoc, Harvard Medical School" },
+    { name: "Peter Wang", institution: "postdoc, Caltech" },
+    { name: "Shi Feng", institution: "Ph.D., Harvard CS" },
+    { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy" }
   ];
 
   return (
     <section id="team" className="py-24 bg-black relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#6d28d9]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C41230]/5 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
@@ -73,20 +77,25 @@ const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {leadership.map((member, i) => (
-            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#6d28d9]/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-[#8b5cf6] transition-colors text-white">{member.name}</h3>
-              <p className="text-[#C41230] font-medium mb-4">{member.role}</p>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300">
+              {member.image && (
+                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#C41230]/50 transition-all">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+              )}
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors text-white">{member.name}</h3>
+              <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
               </p>
               <div className="flex gap-4">
                 {member.links.linkedin && (
-                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                     <Linkedin size={20} />
                   </a>
                 )}
                 {member.links.website && (
-                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 )}
@@ -102,20 +111,25 @@ const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {advisors.map((member, i) => (
-            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#6d28d9]/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-[#8b5cf6] transition-colors text-white">{member.name}</h3>
-              <p className="text-[#C41230] font-medium mb-4">{member.role}</p>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300">
+              {member.image && (
+                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#C41230]/50 transition-all">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+              )}
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors text-white">{member.name}</h3>
+              <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
+              <p className="text-zinc-300 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
               </p>
               <div className="flex gap-4">
                 {member.links.linkedin && (
-                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                     <Linkedin size={20} />
                   </a>
                 )}
                 {member.links.website && (
-                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 )}
@@ -134,8 +148,8 @@ const Team = () => {
             <div key={i} className="flex items-center p-4 rounded-xl border border-white/5 hover:bg-white/5 transition-colors">
               <div className="w-2 h-2 rounded-full bg-[#C41230] mr-4"></div>
               <div>
-                <p className="font-semibold text-gray-200">{fellow.name}</p>
-                <p className="text-xs text-gray-500">{fellow.institution}</p>
+                <p className="font-semibold text-zinc-100">{fellow.name}</p>
+                <p className="text-xs text-zinc-400">{fellow.institution}</p>
               </div>
             </div>
           ))}

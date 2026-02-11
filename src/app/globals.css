@@ -32,3 +32,15 @@ body {
 .accent-gradient {
   @apply bg-gradient-to-r from-[#6d28d9] to-[#C41230];
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-[#C41230]/50 transition-colors;
+}
