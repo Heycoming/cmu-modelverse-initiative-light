@@ -2,20 +2,21 @@
 
 import React from 'react';
 import { Linkedin, ExternalLink } from 'lucide-react';
+import { BASE_PATH } from '@/lib/constants';
 
 const Team = () => {
   const leadership = [
     {
       name: "Fernando Jia",
       role: "CEO",
-      image: "/media/avatar-fernando.png",
+      image: `${BASE_PATH}/media/avatar-fernando.png`,
       bio: "A seasoned professional with a rich background in tech and business. Guest lecturer at Carnegie Mellon University and University of Michigan. Ex-investor & fellow at Y Combinator, ex-McKinsey consultant, ex-IBD analyst at CITIC Securities. Alumnus of UC Berkeley's Center for Responsible Decentralized Intelligence.",
       links: { linkedin: "https://www.linkedin.com/in/fernando-j/" }
     },
     {
       name: "Dr. Tianqin Li",
       role: "Chief Scientist",
-      image: "/media/avatar-tianqin-li.png",
+      image: `${BASE_PATH}/media/avatar-tianqin-li.png`,
       bio: "PhD in CMU CS Department under Zico Kolter and Tai Sing Lee. Collaborated with Ruslan Salakhutdinov. Fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation. Guest lecturer in multiple CMU AI courses.",
       links: { linkedin: "https://www.linkedin.com/in/tianqin-li-b16299170/", website: "http://crazy-jack.github.io/works.html" }
     },
@@ -32,7 +33,7 @@ const Team = () => {
     {
       name: "Prof. Tai-Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
-      image: "/media/avatar-tai-sing-lee.png",
+      image: `${BASE_PATH}/media/avatar-tai-sing-lee.png`,
       bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },

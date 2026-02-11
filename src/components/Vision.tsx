@@ -3,6 +3,7 @@
 import React from 'react';
 import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone, Palette, Code, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { BASE_PATH } from '@/lib/constants';
 
 const PricingCard = ({ title, price, subtitle, icons, MainIcon }: { title: string, price: string, subtitle: string, icons?: React.ElementType[], MainIcon: React.ElementType }) => (
   <div className="w-full max-w-3xl mx-auto mb-6 bg-zinc-50 border border-zinc-200 rounded-[24px] p-6 flex flex-col md:flex-row items-center justify-between hover:bg-zinc-100 transition-all duration-300 group shadow-sm">
@@ -79,7 +80,7 @@ const Vision = () => {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <img src="/media/phase1-matchmaking.png" alt="Phase 1 Concept" className="w-full rounded-3xl border border-zinc-100 shadow-2xl" />
+            <img src={`${BASE_PATH}/media/phase1-matchmaking.png`} alt="Phase 1 Concept" className="w-full rounded-3xl border border-zinc-100 shadow-2xl" />
           </div>
         </motion.div>
 
@@ -196,7 +197,7 @@ const Vision = () => {
             </div>
           </div>
           <div>
-            <img src="/media/phase3-agi.png" alt="Decentralized AGI" className="w-full rounded-3xl shadow-2xl shadow-blue-500/10" />
+            <img src={`${BASE_PATH}/media/phase3-agi.png`} alt="Decentralized AGI" className="w-full rounded-3xl shadow-2xl shadow-blue-500/10" />
           </div>
         </motion.div>
       </div>

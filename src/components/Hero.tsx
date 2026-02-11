@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BASE_PATH } from '@/lib/constants';
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
             className="order-2 lg:order-1"
           >
             <img 
-              src="/media/hero-head.png" 
+              src={`${BASE_PATH}/media/hero-head.png`} 
               alt="Modelverse Concept" 
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
             />
