@@ -4,7 +4,7 @@ import React from 'react';
 
 const PartnerCard = ({ name, logo, href }: { name: string, logo?: string, href?: string }) => {
   const content = (
-    <div className="flex items-center justify-center p-4 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 hover:bg-white/10 transition-all group h-20">
+    <div className="flex items-center justify-center p-4 bg-zinc-50 border border-zinc-200 rounded-xl hover:border-zinc-300 hover:bg-zinc-100 transition-all group h-20 shadow-sm">
       {logo ? (
         <img 
           src={logo} 
@@ -16,7 +16,7 @@ const PartnerCard = ({ name, logo, href }: { name: string, logo?: string, href?:
           }}
         />
       ) : null}
-      <span className={`${logo ? 'hidden' : 'block'} text-gray-500 group-hover:text-white font-bold tracking-tight transition-colors`}>{name}</span>
+      <span className={`${logo ? 'hidden' : 'block'} text-zinc-500 group-hover:text-black font-bold tracking-tight transition-colors`}>{name}</span>
     </div>
   );
 
@@ -58,10 +58,10 @@ const Partners = () => {
   ];
 
   return (
-    <section id="partners" className="py-24 bg-[#050505]">
+    <section id="partners" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">Investors & Partners</h3>
+          <h3 className="text-3xl font-bold text-zinc-900 mb-12 text-center">Investors & Partners</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
             {investors.map((item, i) => (
               <PartnerCard key={i} name={item.name} logo={item.logo} />
@@ -70,7 +70,7 @@ const Partners = () => {
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">Trusted By</h3>
+          <h3 className="text-3xl font-bold text-zinc-900 mb-12 text-center">Trusted By</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {trustedBy.map((item, i) => (
               <PartnerCard key={i} name={item.name} href={item.href} />

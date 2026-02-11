@@ -86,12 +86,12 @@ const Research = () => {
   ].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
   return (
-    <section id="research" className="py-24 bg-[#0a0a0a]">
+    <section id="research" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Recent Research</h2>
+          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Recent Research</h2>
           <div className="h-1 w-20 bg-[#C41230] mb-8"></div>
-          <p className="text-gray-400 max-w-2xl">
+          <p className="text-zinc-600 max-w-2xl">
             A chronological list of recent contributions from our Research Fellows and Committee members, formatted in MLA style.
           </p>
         </div>
@@ -103,19 +103,19 @@ const Research = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-[#C41230]/30 transition-all group"
+              className="p-6 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-[#C41230]/30 transition-all group shadow-sm"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex-grow">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C41230] bg-[#C41230]/10 px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C41230] bg-[#C41230]/5 px-2 py-0.5 rounded">
                       {pub.category}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2 leading-snug group-hover:text-[#C41230] transition-colors">
+                  <h3 className="text-lg font-bold text-zinc-900 mb-2 leading-snug group-hover:text-[#C41230] transition-colors">
                     "{pub.title}"
                   </h3>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-500">
                     <span className="flex items-center gap-1">
                       <User size={14} />
                       {pub.authors}
@@ -126,7 +126,7 @@ const Research = () => {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-gray-400 font-mono text-sm whitespace-nowrap">
+                <div className="flex items-center gap-2 text-zinc-400 font-mono text-sm whitespace-nowrap">
                   <Calendar size={14} />
                   {pub.year}
                 </div>

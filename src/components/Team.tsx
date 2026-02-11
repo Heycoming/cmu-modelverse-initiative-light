@@ -66,36 +66,36 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-24 bg-black relative overflow-hidden">
+    <section id="team" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C41230]/5 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Leadership</h2>
+          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Leadership</h2>
           <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {leadership.map((member, i) => (
-            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300">
+            <div key={i} className="bg-zinc-50 backdrop-blur-md border border-zinc-200 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300 shadow-sm">
               {member.image && (
-                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#C41230]/50 transition-all">
+                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-zinc-200 group-hover:border-[#C41230]/50 transition-all">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors text-white">{member.name}</h3>
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">{member.name}</h3>
               <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
-              <p className="text-zinc-300 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
+              <p className="text-zinc-600 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
               </p>
               <div className="flex gap-4">
                 {member.links.linkedin && (
-                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors">
                     <Linkedin size={20} />
                   </a>
                 )}
                 {member.links.website && (
-                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 )}
@@ -105,31 +105,31 @@ const Team = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Advisory Board</h2>
+          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Advisory Board</h2>
           <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {advisors.map((member, i) => (
-            <div key={i} className="bg-[#121212]/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300">
+            <div key={i} className="bg-zinc-50 backdrop-blur-md border border-zinc-200 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300 shadow-sm">
               {member.image && (
-                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#C41230]/50 transition-all">
+                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-zinc-200 group-hover:border-[#C41230]/50 transition-all">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors text-white">{member.name}</h3>
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">{member.name}</h3>
               <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
-              <p className="text-zinc-300 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
+              <p className="text-zinc-600 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
               </p>
               <div className="flex gap-4">
                 {member.links.linkedin && (
-                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                  <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors">
                     <Linkedin size={20} />
                   </a>
                 )}
                 {member.links.website && (
-                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                  <a href={member.links.website} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-black transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 )}
@@ -139,17 +139,17 @@ const Team = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Research Fellows</h2>
+          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Research Fellows</h2>
           <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {fellows.map((fellow, i) => (
-            <div key={i} className="flex items-center p-4 rounded-xl border border-white/5 hover:bg-white/5 transition-colors">
+            <div key={i} className="flex items-center p-4 rounded-xl border border-zinc-100 hover:bg-zinc-50 transition-colors">
               <div className="w-2 h-2 rounded-full bg-[#C41230] mr-4"></div>
               <div>
-                <p className="font-semibold text-zinc-100">{fellow.name}</p>
-                <p className="text-xs text-zinc-400">{fellow.institution}</p>
+                <p className="font-semibold text-zinc-800">{fellow.name}</p>
+                <p className="text-xs text-zinc-500">{fellow.institution}</p>
               </div>
             </div>
           ))}
