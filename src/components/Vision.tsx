@@ -1,14 +1,14 @@
 'use client';
 
 import React from 'react';
-import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone } from 'lucide-react';
+import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone, Palette, Code, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const PricingCard = ({ title, price, subtitle, icons }: { title: string, price: string, subtitle: string, icons?: React.ElementType[] }) => (
+const PricingCard = ({ title, price, subtitle, icons, MainIcon }: { title: string, price: string, subtitle: string, icons?: React.ElementType[], MainIcon: React.ElementType }) => (
   <div className="w-full max-w-3xl mx-auto mb-6 bg-zinc-50 border border-zinc-200 rounded-[24px] p-6 flex flex-col md:flex-row items-center justify-between hover:bg-zinc-100 transition-all duration-300 group shadow-sm">
     <div className="flex items-center gap-6 text-center md:text-left mb-4 md:mb-0">
       <div className="w-12 h-12 bg-zinc-200 rounded-xl flex items-center justify-center border border-zinc-300 group-hover:border-[#C41230]/50 transition-colors">
-        <div className="w-6 h-6 bg-zinc-400 rounded-sm"></div>
+        <MainIcon size={24} className="text-zinc-500 group-hover:text-[#C41230] transition-colors" />
       </div>
       <div>
         <h4 className="text-xl font-semibold text-zinc-900 mb-1">{title}</h4>
@@ -154,18 +154,21 @@ const Vision = () => {
               price="$150+" 
               subtitle="(voice · video · image tools)" 
               icons={[Mic2, Video, Image, Music]} 
+              MainIcon={Palette}
             />
             <PricingCard 
               title="Engineers" 
               price="$100+" 
               subtitle="(dev + infra stack)" 
               icons={[Code2, Terminal, Layers, Cpu]} 
+              MainIcon={Code}
             />
             <PricingCard 
               title="Common Users" 
               price="~$200+" 
               subtitle="Multimodal bundles → high switching cost" 
               icons={[Globe, Zap, Smartphone]}
+              MainIcon={Users}
             />
           </div>
         </motion.div>
