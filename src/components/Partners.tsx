@@ -9,7 +9,7 @@ const PartnerCard = ({ name, logo, href }: { name: string, logo?: string, href?:
         <img 
           src={logo} 
           alt={name} 
-          className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" 
+          className="max-h-full max-w-full object-contain transition-all opacity-100 group-hover:scale-105" 
           onError={(e) => {
             (e.target as any).style.display = 'none';
             const textElement = (e.target as any).nextSibling;
