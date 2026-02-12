@@ -13,9 +13,9 @@ const Team = () => {
       links: { linkedin: "https://www.linkedin.com/in/fernando-j/" }
     },
     {
-      name: "Dr. Tianqin Li",
+      name: "Tianqin Li",
       role: "Chief Scientist",
-      bio: "PhD in CMU CS Department under Zico Kolter and Tai Sing Lee. Collaborated with Ruslan Salakhutdinov. Fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation. Guest lecturer in multiple CMU AI courses.",
+      bio: "PhD Researcher in CMU CS Department under Tai Sing Lee (NeurIPS Neuroscience ex-Director) and Zico Kolter (CMU AI Area Director in Computer Science, OpenAI Borad). Collaborated with Ruslan Salakhutdinov (VP Research @ Meta, ex-Apple AI Director, Student of AI's Founding Father, Geoffrey Hinton) and Louis-Philippe Morency (Multimodal AI pioneer professor). Tianqin is also a fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation (selective 1% of all submissions). Guest lecturer in multiple CMU AI courses.",
       links: { linkedin: "https://www.linkedin.com/in/tianqin-li-b16299170/", website: "http://crazy-jack.github.io/works.html" }
     },
     {

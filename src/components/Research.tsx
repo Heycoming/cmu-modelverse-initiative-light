@@ -954,7 +954,7 @@ const Research = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Selected Research</h2>
+          <h2 className="text-4xl font-bold mb-4 text-zinc-900">Selected Publications from Research Fellows</h2>
           <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
