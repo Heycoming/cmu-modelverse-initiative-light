@@ -30,7 +30,7 @@ const Navbar = () => {
       {/* Top Bar: Logos */}
       <div className="bg-[#C41230] py-3 px-6">
         <div className="container mx-auto flex items-center justify-between">
-           <a href="#" className="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+           <a href="#" className="flex items-center gap-4 px-4 py-2">
              {/* Intelligence Cube Logo */}
              <div className="relative h-12 w-auto flex items-center">
                <img 
@@ -43,11 +43,11 @@ const Navbar = () => {
              {/* Divider */}
              <div className="h-8 w-[1px] bg-white/30 mx-1"></div>
    
-             {/* CMU Logo */}
-             <div className="relative h-8 w-auto flex items-center">
+             {/* CMU SCS Logo */}
+             <div className="relative h-10 w-auto flex items-center">
                <img 
-                 src={`${BASE_PATH}/media/cmu-logo.jpg`} 
-                 alt="Carnegie Mellon University" 
+                 src={`${BASE_PATH}/media/cmu_scs_logo.png`} 
+                 alt="Carnegie Mellon University School of Computer Science" 
                  className="h-full w-auto object-contain brightness-0 invert"
                />
              </div>

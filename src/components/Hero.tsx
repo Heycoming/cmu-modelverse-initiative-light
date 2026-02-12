@@ -6,13 +6,13 @@ import { BASE_PATH } from '@/lib/constants';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col pt-[136px] bg-white">
+    <section className="relative min-h-[calc(100vh-136px)] flex flex-col mt-[136px] bg-white">
       {/* Full-width Background Image */}
-      <div className="relative w-full h-[70vh] bg-zinc-100 overflow-hidden">
+      <div className="relative w-full flex-1 min-h-[calc(100vh-136px)] bg-zinc-100 overflow-hidden">
         <img 
-          src={`${BASE_PATH}/media/hero-split.png`} 
+          src={`${BASE_PATH}/media/hero.png`} 
           alt="Modelverse Architecture" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover absolute inset-0"
         />
         
         {/* Overlay Card - Absolute on desktop, stacked on mobile */}
@@ -21,14 +21,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white/90 backdrop-blur-md shadow-2xl p-8 rounded-2xl max-w-md md:max-w-lg border border-white/50"
+            className="bg-white/90 backdrop-blur-md shadow-2xl p-8 rounded-2xl max-w-2xl border border-white/50"
           >
             <span className="inline-block mb-3 text-xs font-bold tracking-widest uppercase text-[#C41230]">
               Intelligence Cubed × Carnegie Mellon University
             </span>
-            <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-zinc-900 leading-tight">
-              Modelverse Dev <br />
-              Initiative
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight text-zinc-900 leading-tight whitespace-nowrap">
+              Modelverse Dev Initiative
             </h1>
             <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-8">
               A collaborative research ecosystem pioneering decentralized intelligence and cost-effective AGI development.
