@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Bar: Navigation */}
-      <div className={`transition-all duration-300 border-b border-zinc-100 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'}`}>
+      <div className={`transition-all duration-300 border-b border-zinc-800 ${scrolled ? 'bg-[#333333]/95 backdrop-blur-md shadow-sm' : 'bg-[#333333]'}`}>
         <div className="container mx-auto px-6">
           <div className="hidden md:flex items-center gap-8 py-4">
             {navLinks.map((link) => (
@@ -73,8 +73,8 @@ const Navbar = () => {
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${
                   link.name === 'Join Initiative' 
-                    ? 'ml-auto px-5 py-2 bg-zinc-900 text-white rounded-full hover:bg-[#C41230]' 
-                    : 'text-zinc-600 hover:text-[#C41230]'
+                    ? 'ml-auto px-5 py-2 bg-white text-[#333333] rounded-full hover:bg-zinc-200' 
+                    : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.name}

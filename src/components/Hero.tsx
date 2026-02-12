@@ -21,7 +21,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white/90 backdrop-blur-md shadow-2xl p-8 rounded-2xl max-w-2xl border border-white/50"
+            className="bg-white/75 backdrop-blur-md shadow-2xl p-8 rounded-2xl max-w-2xl border border-white/50"
           >
             <span className="inline-block mb-3 text-xs font-bold tracking-widest uppercase text-[#C41230]">
               Intelligence Cubed × Carnegie Mellon University
