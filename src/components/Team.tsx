@@ -9,21 +9,18 @@ const Team = () => {
     {
       name: "Fernando Jia",
       role: "CEO",
-      image: `${BASE_PATH}/media/fernando.png`,
       bio: "A seasoned professional with a rich background in tech and business. Guest lecturer at Carnegie Mellon University and University of Michigan. Ex-investor & fellow at Y Combinator, ex-McKinsey consultant, ex-IBD analyst at CITIC Securities. Alumnus of UC Berkeley's Center for Responsible Decentralized Intelligence.",
       links: { linkedin: "https://www.linkedin.com/in/fernando-j/" }
     },
     {
       name: "Dr. Tianqin Li",
       role: "Chief Scientist",
-      image: `${BASE_PATH}/media/tianqin-li.png`,
       bio: "PhD in CMU CS Department under Zico Kolter and Tai Sing Lee. Collaborated with Ruslan Salakhutdinov. Fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation. Guest lecturer in multiple CMU AI courses.",
       links: { linkedin: "https://www.linkedin.com/in/tianqin-li-b16299170/", website: "http://crazy-jack.github.io/works.html" }
     },
     {
       name: "Florence Li",
       role: "Executive Team",
-      image: "",
       bio: "Creative Technology Executive and Stanford CS master specializing in Machine Learning & Blockchain. Scaled MetaY's GPU DePIN platform. Introduced $10M+ in AI and Web3 investments. Frequent speaker at tech summits.",
       links: { linkedin: "https://www.linkedin.com/in/florence-li-18b657206/" }
     }
@@ -33,7 +30,6 @@ const Team = () => {
     {
       name: "Prof. Tai-Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
-      image: `${BASE_PATH}/media/tai-sing-lee.png`,
       bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },
@@ -42,12 +38,6 @@ const Team = () => {
       role: "Co-Founder & General Partner at Orange DAO",
       bio: "Bay Area entrepreneur and venture investor focused on early-stage Web3 and fintech. Y Combinator Summer '16 alumnus. Executive MBA from UC Berkeley's Haas School of Business.",
       links: { linkedin: "https://www.linkedin.com/in/orionparrott/" }
-    },
-    {
-      name: "Prof. Xi Chen",
-      role: "Professor & André Meyer Faculty Fellow, NYU Stern",
-      bio: "Dual expert in machine learning and blockchain. 230+ papers and 18k+ citations. PhD & MS from CMU. Principal Scientist at Amazon Ads. Forbes 30 Under 30 (Science).",
-      links: { website: "https://people.stern.nyu.edu/xchen3/" }
     }
   ];
 
@@ -79,11 +69,6 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {leadership.map((member, i) => (
             <div key={i} className="bg-zinc-50 backdrop-blur-md border border-zinc-200 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300 shadow-sm">
-              {member.image && (
-                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-zinc-200 group-hover:border-[#C41230]/50 transition-all">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-              )}
               <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">
                 {member.links.website || member.links.linkedin ? (
                   <a 
@@ -126,11 +111,6 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {advisors.map((member, i) => (
             <div key={i} className="bg-zinc-50 backdrop-blur-md border border-zinc-200 rounded-2xl p-8 group hover:border-[#C41230]/50 transition-all duration-300 shadow-sm">
-              {member.image && (
-                <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-zinc-200 group-hover:border-[#C41230]/50 transition-all">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-              )}
               <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">
                 {member.links.website || member.links.linkedin ? (
                   <a 
