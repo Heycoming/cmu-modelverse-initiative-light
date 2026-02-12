@@ -48,7 +48,7 @@ const Navbar = () => {
                <img 
                  src={`${BASE_PATH}/media/cmu_scs_logo.png`} 
                  alt="Carnegie Mellon University School of Computer Science" 
-                 className="h-full w-auto object-contain brightness-0 invert"
+                 className="h-full w-auto object-contain"
                />
              </div>
            </a>
