@@ -1,46 +1,87 @@
 'use client';
 
 import React from 'react';
-import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone, Palette, Code, Users } from 'lucide-react';
+import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image as ImageIcon, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone, Palette, Code, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BASE_PATH } from '@/lib/constants';
 
-const PricingCard = ({ title, price, subtitle, icons, MainIcon }: { title: string, price: string, subtitle: string, icons?: React.ElementType[], MainIcon: React.ElementType }) => (
-  <div className="w-full max-w-3xl mx-auto mb-6 bg-zinc-50 border border-zinc-200 rounded-[24px] p-6 flex flex-col md:flex-row items-center justify-between hover:bg-zinc-100 transition-all duration-300 group shadow-sm">
-    <div className="flex items-center gap-6 text-center md:text-left mb-4 md:mb-0">
-      <div className="w-12 h-12 bg-zinc-200 rounded-xl flex items-center justify-center border border-zinc-300 group-hover:border-[#C41230]/50 transition-colors">
-        <MainIcon size={24} className="text-zinc-500 group-hover:text-[#C41230] transition-colors" />
+// Detailed Pricing Card Implementation based on Revision3 requirements
+const PricingCard = ({ 
+  title, 
+  price, 
+  subtitle, 
+  icons, 
+  MainIcon,
+  variant = "default"
+}: { 
+  title: string, 
+  price: string, 
+  subtitle: string, 
+  icons?: React.ElementType[], 
+  MainIcon: React.ElementType,
+  variant?: "default" | "common"
+}) => (
+  <motion.div 
+    whileHover={{ 
+      y: 0,
+      scale: 1.0,
+      boxShadow: "0 20px 40px -10px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05)"
+    }}
+    whileTap={{ y: 1 }}
+    initial={{ boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.02)" }}
+    transition={{ duration: 0.2, ease: "easeInOut" }}
+    className="w-full max-w-[860px] mx-auto mb-6 relative overflow-hidden rounded-[24px] bg-[#2E2E35]/95 backdrop-blur-md border border-white/5 group cursor-pointer"
+    style={{ minHeight: '110px' }}
+  >
+    {/* Inner Glow Effect */}
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-8 py-5 gap-6">
+      {/* Left Column: Icon + Text */}
+      <div className="flex items-center gap-6 w-full md:w-auto">
+        {/* Main Icon Area */}
+        <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center border border-white/10 shadow-inner group-hover:scale-105 transition-transform duration-300">
+          <MainIcon size={28} className="text-white/90" />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col justify-center">
+          <h4 className="text-[20px] font-semibold text-white leading-tight mb-1">{title}</h4>
+          <p className="text-[13px] text-[#B8B8C0] font-normal leading-snug">{subtitle}</p>
+          
+          {/* Tool Icons Row (if applicable) */}
+          {icons && icons.length > 0 && (
+            <div className="flex gap-1.5 mt-2.5">
+              {icons.map((Icon, i) => (
+                <div key={i} className="w-6 h-6 rounded-[6px] bg-zinc-700/50 flex items-center justify-center border border-white/5 group-hover:bg-zinc-600/50 group-hover:border-white/20 transition-all duration-300">
+                  <Icon size={12} className="text-zinc-400 group-hover:text-zinc-200" />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-      <div>
-        <h4 className="text-xl font-semibold text-zinc-900 mb-1">{title}</h4>
-        <p className="text-sm text-zinc-500 font-normal">{subtitle}</p>
-        {icons && (
-          <div className="flex gap-2 mt-2 justify-center md:justify-start">
-            {icons.map((Icon, i) => (
-              <div key={i} className="w-6 h-6 bg-zinc-100 rounded-md flex items-center justify-center border border-zinc-200 group-hover:bg-zinc-200 transition-colors">
-                <Icon size={12} className="text-zinc-500 group-hover:text-zinc-900" />
-              </div>
-            ))}
-          </div>
-        )}
+
+      {/* Right Column: Price */}
+      <div className="flex items-baseline gap-1.5 shrink-0 md:ml-auto">
+        <span className="text-[30px] font-bold text-white tracking-tight">{price}</span>
+        <span className="text-[15px] text-[#8E8E95] font-normal">/ month</span>
       </div>
     </div>
-    <div className="text-right">
-      <span className="text-3xl font-bold text-zinc-900">{price}</span>
-      <span className="text-zinc-500 ml-1">/ month</span>
-    </div>
-  </div>
+  </motion.div>
 );
 
 const Vision = () => {
   return (
-    <section id="vision" className="py-24 bg-white">
+    <section id="vision" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-24">
-          <h2 className="text-5xl font-bold mb-6 text-zinc-900 tracking-tight">Our Evolution Roadmap</h2>
-          <p className="text-zinc-600 text-lg leading-relaxed max-w-2xl">
+        <div className="max-w-4xl mx-auto mb-24 text-center">
+          <h2 className="text-5xl md:text-6xl font-black mb-8 text-zinc-900 tracking-tighter">
+            Our Evolution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C41230] to-purple-600">Roadmap</span>
+          </h2>
+          <p className="text-zinc-600 text-xl leading-relaxed max-w-2xl mx-auto">
             From compute efficiency to the ultimate goal of Artificial General Intelligence, 
-            the i³ × CMU Modelverse Dev Initiative is architecting the future of decentralized systems.
+            we are architecting the future of decentralized systems.
           </p>
         </div>
 
@@ -49,38 +90,47 @@ const Vision = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="mb-40 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div className="order-2 lg:order-1">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[#C41230]/5 flex items-center justify-center">
-                <Database className="text-[#C41230]" size={24} />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-[#C41230] flex items-center justify-center shadow-lg shadow-[#C41230]/20">
+                <Database className="text-white" size={28} />
               </div>
-              <span className="text-sm font-bold tracking-widest text-[#C41230] uppercase">Phase 01</span>
+              <span className="text-sm font-bold tracking-[0.2em] text-[#C41230] uppercase">Phase 01</span>
             </div>
-            <h3 className="text-4xl font-bold mb-6 text-zinc-900 leading-tight">Compute × Data Matchmaking for AI Training</h3>
-            <p className="text-zinc-600 text-lg mb-8 leading-relaxed">
+            <h3 className="text-4xl md:text-5xl font-bold mb-8 text-zinc-900 leading-[1.1]">
+              Compute × Data Matchmaking <br/> for AI Training
+            </h3>
+            <p className="text-zinc-600 text-lg mb-10 leading-relaxed">
               We match compute and data—connecting data providers and compute providers (both centralized cloud and decentralized DePIN nodes) to help increase demand and give model creators cheaper compute + datasets, especially as scaling laws weaken.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {[
                 { title: "Infrastructure Layer", desc: "Compute matchmaking margin across central cloud + DePIN nodes." },
                 { title: "Data Sales", desc: "Sell model-training datasets to model creators." },
                 { title: "Outcome", desc: "Higher provider demand + lower training cost for model builders." }
               ].map((item, i) => (
-                <div key={i} className="flex gap-4">
-                  <CheckCircle2 className="text-[#C41230] mt-1 shrink-0" size={20} />
+                <div key={i} className="flex gap-5 group">
+                  <div className="mt-1 shrink-0 w-8 h-8 rounded-full bg-[#C41230]/10 flex items-center justify-center group-hover:bg-[#C41230] transition-colors duration-300">
+                    <CheckCircle2 className="text-[#C41230] group-hover:text-white transition-colors duration-300" size={18} />
+                  </div>
                   <div>
-                    <h4 className="text-zinc-900 font-bold mb-1">{item.title}</h4>
-                    <p className="text-zinc-500 text-sm">{item.desc}</p>
+                    <h4 className="text-zinc-900 font-bold mb-2 text-lg">{item.title}</h4>
+                    <p className="text-zinc-500 text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <img src={`${BASE_PATH}/media/phase1-matchmaking.png`} alt="Phase 1 Concept" className="w-full rounded-3xl border border-zinc-100 shadow-2xl" />
+          <div className="order-1 lg:order-2 relative">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#C41230]/10 to-transparent rounded-[3rem] transform rotate-3"></div>
+            <img 
+              src={`${BASE_PATH}/media/phase1-diagram.png`} 
+              alt="Phase 1 Concept" 
+              className="relative w-full rounded-[3rem] border-4 border-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500" 
+            />
           </div>
         </motion.div>
 
@@ -89,22 +139,24 @@ const Vision = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-40"
         >
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
-                <ShieldAlert className="text-purple-600" size={24} />
+          <div className="text-center max-w-5xl mx-auto mb-20">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-purple-600 flex items-center justify-center shadow-lg shadow-purple-600/20">
+                <ShieldAlert className="text-white" size={28} />
               </div>
-              <span className="text-sm font-bold tracking-widest text-purple-600 uppercase">Phase 02</span>
+              <span className="text-sm font-bold tracking-[0.2em] text-purple-600 uppercase">Phase 02</span>
             </div>
-            <h3 className="text-4xl font-bold mb-6 text-zinc-900 leading-tight">The AI Bubble: LLMs Are Hitting Their Hard Limits</h3>
-            <p className="text-zinc-600 text-lg">
+            <h3 className="text-4xl md:text-5xl font-bold mb-8 text-zinc-900 leading-[1.1]">
+              The AI Bubble: <br/> LLMs Are Hitting Their Hard Limits
+            </h3>
+            <p className="text-zinc-600 text-xl max-w-3xl mx-auto">
               A risk-hedging solution to the AI bubble crisis, driving cost reduction and efficiency through three core pillars.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
             {[
               {
                 title: "Economic Limits",
@@ -131,15 +183,17 @@ const Vision = () => {
                 ]
               }
             ].map((pillar, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-zinc-50 border border-zinc-200 hover:border-purple-500/30 transition-all">
-                <h4 className="text-xl font-bold mb-6 text-zinc-900 flex items-center gap-3">
-                  <span className="text-purple-600 text-sm font-mono">{i + 1}.</span>
+              <div key={i} className="p-10 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300 group">
+                <h4 className="text-2xl font-bold mb-8 text-zinc-900 flex items-center gap-4">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-200 text-zinc-600 text-sm font-bold group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    {i + 1}
+                  </span>
                   {pillar.title}
                 </h4>
-                <ul className="space-y-4">
+                <ul className="space-y-5">
                   {pillar.items.map((item, j) => (
-                    <li key={j} className="text-zinc-600 text-sm flex gap-3">
-                      <div className="w-1 h-1 rounded-full bg-purple-600 mt-2 shrink-0"></div>
+                    <li key={j} className="text-zinc-600 text-[15px] leading-relaxed flex gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 mt-2.5 shrink-0 group-hover:bg-purple-500 transition-colors"></div>
                       {item}
                     </li>
                   ))}
@@ -148,29 +202,47 @@ const Vision = () => {
             ))}
           </div>
 
-          <div className="py-12 bg-zinc-50 rounded-[40px] border border-zinc-200">
-            <h3 className="text-2xl md:text-3xl font-medium text-zinc-900 text-center mb-12">AI pricing is already segmented by user type</h3>
-            <PricingCard 
-              title="Media Creators" 
-              price="$150+" 
-              subtitle="(voice · video · image tools)" 
-              icons={[Mic2, Video, Image, Music]} 
-              MainIcon={Palette}
-            />
-            <PricingCard 
-              title="Engineers" 
-              price="$100+" 
-              subtitle="(dev + infra stack)" 
-              icons={[Code2, Terminal, Layers, Cpu]} 
-              MainIcon={Code}
-            />
-            <PricingCard 
-              title="Common Users" 
-              price="~$200+" 
-              subtitle="Multimodal bundles → high switching cost" 
-              icons={[Globe, Zap, Smartphone]}
-              MainIcon={Users}
-            />
+          {/* Pricing Section - Dark Glassmorphism */}
+          <div className="relative py-20 px-6 rounded-[3rem] overflow-hidden">
+            {/* Dark Background */}
+            <div className="absolute inset-0 bg-[#0A0A0B]">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1E] to-[#050505] opacity-80"></div>
+              {/* Glow Effects */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/20 blur-[120px] rounded-full"></div>
+            </div>
+
+            <div className="relative z-10">
+              <div className="text-center mb-16">
+                <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-2">
+                  AI pricing is already segmented by user type
+                </h3>
+              </div>
+
+              <div className="space-y-6">
+                <PricingCard 
+                  title="Media Creators" 
+                  price="$150+" 
+                  subtitle="(voice · video · image tools)" 
+                  icons={[Mic2, Video, ImageIcon, Music]} 
+                  MainIcon={Palette}
+                />
+                <PricingCard 
+                  title="Engineers" 
+                  price="$100+" 
+                  subtitle="(dev + infra stack)" 
+                  icons={[Code2, Terminal, Layers, Cpu]} 
+                  MainIcon={Code}
+                />
+                <PricingCard 
+                  title="Common Users" 
+                  price="~$200+" 
+                  subtitle="Multimodal bundles → high switching cost" 
+                  icons={[]} // Common users card typically emphasizes the text
+                  MainIcon={Users}
+                  variant="common"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -179,25 +251,43 @@ const Vision = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
         >
           <div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                <Cpu className="text-blue-600" size={24} />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20">
+                <Cpu className="text-white" size={28} />
               </div>
-              <span className="text-sm font-bold tracking-widest text-blue-600 uppercase">Phase 03</span>
+              <span className="text-sm font-bold tracking-[0.2em] text-blue-600 uppercase">Phase 03</span>
             </div>
-            <h3 className="text-4xl font-bold mb-6 text-zinc-900 leading-tight">Decentralization is the Only Path to AGI</h3>
-            <p className="text-zinc-600 text-lg leading-relaxed">
-              Decentralized Intelligence is the ultimate frontier. As centralized systems hit the limits of marginal utility, a decentralized ecosystem provides a faster, more cost-effective, and highly specialized path to achieving true AGI across niche domains.
-            </p>
-            <div className="mt-8 p-6 rounded-2xl bg-blue-50 border border-blue-100 italic text-blue-800">
-              "Centralized scaling laws are reaching their peak; decentralized intelligence offers the performance and scalability required for the next leap in AGI."
+            <h3 className="text-4xl md:text-5xl font-bold mb-8 text-zinc-900 leading-[1.1]">
+              Decentralization is the <br/> Only Path to AGI
+            </h3>
+            <div className="prose prose-lg text-zinc-600 mb-10">
+              <p>
+                Decentralized Intelligence is the ultimate frontier. As centralized systems hit the limits of marginal utility, a decentralized ecosystem provides a faster, more cost-effective, and highly specialized path to achieving true AGI across niche domains.
+              </p>
+              <p>
+                Centralized Intelligence can be cheaper, faster, and more timely, with better performance covering niche areas.
+              </p>
+            </div>
+            
+            <div className="p-8 rounded-3xl bg-blue-50 border border-blue-100 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                <Globe size={120} className="text-blue-600" />
+              </div>
+              <p className="relative z-10 text-blue-900 font-medium text-lg italic leading-relaxed">
+                "Centralized scaling laws are reaching their peak; decentralized intelligence offers the performance and scalability required for the next leap in AGI."
+              </p>
             </div>
           </div>
-          <div>
-            <img src={`${BASE_PATH}/media/phase3-agi.png`} alt="Decentralized AGI" className="w-full rounded-3xl shadow-2xl shadow-blue-500/10" />
+          <div className="relative">
+            <div className="absolute inset-0 bg-blue-600/5 rounded-[3rem] transform rotate-3"></div>
+            <img 
+              src={`${BASE_PATH}/media/phase3-ai.png`} 
+              alt="Decentralized AGI" 
+              className="relative w-full rounded-[3rem] shadow-2xl shadow-blue-900/10 transform -rotate-2 hover:rotate-0 transition-transform duration-500" 
+            />
           </div>
         </motion.div>
       </div>

@@ -9,14 +9,14 @@ const Team = () => {
     {
       name: "Fernando Jia",
       role: "CEO",
-      image: `${BASE_PATH}/media/avatar-fernando.png`,
+      image: `${BASE_PATH}/media/fernando.png`,
       bio: "A seasoned professional with a rich background in tech and business. Guest lecturer at Carnegie Mellon University and University of Michigan. Ex-investor & fellow at Y Combinator, ex-McKinsey consultant, ex-IBD analyst at CITIC Securities. Alumnus of UC Berkeley's Center for Responsible Decentralized Intelligence.",
       links: { linkedin: "https://www.linkedin.com/in/fernando-j/" }
     },
     {
       name: "Dr. Tianqin Li",
       role: "Chief Scientist",
-      image: `${BASE_PATH}/media/avatar-tianqin-li.png`,
+      image: `${BASE_PATH}/media/tianqin-li.png`,
       bio: "PhD in CMU CS Department under Zico Kolter and Tai Sing Lee. Collaborated with Ruslan Salakhutdinov. Fellow at Y Combinator. Research focuses on AI models and human intelligence. NeurIPS 2023 Oral presentation. Guest lecturer in multiple CMU AI courses.",
       links: { linkedin: "https://www.linkedin.com/in/tianqin-li-b16299170/", website: "http://crazy-jack.github.io/works.html" }
     },
@@ -33,7 +33,7 @@ const Team = () => {
     {
       name: "Prof. Tai-Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
-      image: `${BASE_PATH}/media/avatar-tai-sing-lee.png`,
+      image: `${BASE_PATH}/media/tai-sing-lee.png`,
       bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },
@@ -52,18 +52,18 @@ const Team = () => {
   ];
 
   const fellows = [
-    { name: "Xuandong Zhao", institution: "postdoc, UC Berkeley RDI" },
-    { name: "Yuejiang Liu", institution: "postdoc, Stanford AI Lab" },
-    { name: "Yaqi Xie", institution: "postdoc, CMU Robotics Institute" },
-    { name: "Shiyi Du", institution: "Ph.D., CMU Computational Biology" },
-    { name: "Jiayuan Liu", institution: "Ph.D., CMU Computer Science" },
-    { name: "Shang Gao", institution: "Ph.D., Caltech Computational Science" },
-    { name: "Yitong Li", institution: "Ph.D., Stanford Computational Science" },
-    { name: "Chengfeng Mao", institution: "Ph.D., MIT" },
-    { name: "Jason Dou", institution: "postdoc, Harvard Medical School" },
-    { name: "Peter Wang", institution: "postdoc, Caltech" },
-    { name: "Shi Feng", institution: "Ph.D., Harvard CS" },
-    { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy" }
+    { name: "Xuandong Zhao", institution: "postdoc, UC Berkeley RDI", link: "https://xuandongzhao.github.io/" },
+    { name: "Yuejiang Liu", institution: "postdoc, Stanford AI Lab", link: "https://scholar.google.com/citations?user=Xi-B5WIAAAAJ&hl=en" },
+    { name: "Yaqi Xie", institution: "postdoc, CMU Robotics Institute", link: "https://scholar.google.com/citations?user=lBCCo0EAAAAJ&hl=en" },
+    { name: "Shiyi Du", institution: "Ph.D., CMU Computational Biology", link: "https://scholar.google.com/citations?user=rVKkjikAAAAJ&hl=en" },
+    { name: "Jiayuan Liu", institution: "Ph.D., CMU Computer Science", link: "https://liu-jiayuan.github.io/" },
+    { name: "Shang Gao", institution: "Ph.D., Caltech Computational Science", link: "https://scholar.google.com/citations?user=I3WuCWEAAAAJ" },
+    { name: "Yitong Li", institution: "Ph.D., Stanford Computational Science", link: "https://www.linkedin.com/in/yitong-li-2b3882299/" },
+    { name: "Chengfeng Mao", institution: "Ph.D., MIT", link: "https://scholar.google.com/citations?user=NfilsZkAAAAJ&hl=en" },
+    { name: "Jason Dou", institution: "postdoc, Harvard Medical School", link: "https://sites.google.com/site/douxiaotianjason/" },
+    { name: "Peter Wang", institution: "postdoc, Caltech", link: "https://pwang.pw/" },
+    { name: "Shi Feng", institution: "Ph.D., Harvard CS", link: "https://fengshi.link/" },
+    { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy", link: "https://scholar.google.com/citations?user=o9EmMaEAAAAJ" }
   ];
 
   return (
@@ -84,7 +84,20 @@ const Team = () => {
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">{member.name}</h3>
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">
+                {member.links.website || member.links.linkedin ? (
+                  <a 
+                    href={member.links.website || member.links.linkedin} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="hover:text-[#C41230] transition-colors"
+                  >
+                    {member.name}
+                  </a>
+                ) : (
+                  member.name
+                )}
+              </h3>
               <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
               <p className="text-zinc-600 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
@@ -118,7 +131,20 @@ const Team = () => {
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">{member.name}</h3>
+              <h3 className="text-2xl font-bold mb-1 group-hover:text-black transition-colors text-zinc-900">
+                {member.links.website || member.links.linkedin ? (
+                  <a 
+                    href={member.links.website || member.links.linkedin} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="hover:text-[#C41230] transition-colors"
+                  >
+                    {member.name}
+                  </a>
+                ) : (
+                  member.name
+                )}
+              </h3>
               <p className="text-[#C41230] font-medium mb-4 uppercase tracking-wider text-xs">{member.role}</p>
               <p className="text-zinc-600 text-sm leading-relaxed mb-6 h-32 overflow-y-auto custom-scrollbar">
                 {member.bio}
@@ -149,7 +175,20 @@ const Team = () => {
             <div key={i} className="flex items-center p-4 rounded-xl border border-zinc-100 hover:bg-zinc-50 transition-colors">
               <div className="w-2 h-2 rounded-full bg-[#C41230] mr-4"></div>
               <div>
-                <p className="font-semibold text-zinc-800">{fellow.name}</p>
+                <p className="font-semibold text-zinc-800">
+                  {fellow.link ? (
+                    <a 
+                      href={fellow.link} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="hover:text-[#C41230] transition-colors hover:underline decoration-1 underline-offset-4"
+                    >
+                      {fellow.name}
+                    </a>
+                  ) : (
+                    fellow.name
+                  )}
+                </p>
                 <p className="text-xs text-zinc-500">{fellow.institution}</p>
               </div>
             </div>

@@ -13,24 +13,26 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Header Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1"
           >
             <img 
-              src={`${BASE_PATH}/media/hero-head.png`} 
-              alt="Modelverse Concept" 
-              className="w-full max-w-2xl mx-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+              src={`${BASE_PATH}/media/hero-split.png`} 
+              alt="Modelverse Architecture" 
+              className="w-full max-w-2xl mx-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:scale-[1.02] transition-transform duration-500"
             />
           </motion.div>
 
+          {/* Right Column: Text & Buttons */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2 text-center lg:text-left"
+            className="order-2 lg:order-2 text-center lg:text-left"
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-widest uppercase bg-zinc-100 border border-zinc-200 rounded-full text-[#C41230]">
               Intelligence Cubed × Carnegie Mellon University
