@@ -22,60 +22,66 @@ const Navbar = () => {
     { name: 'Team', href: '#team' },
     { name: 'Research', href: '#research' },
     { name: 'Partners', href: '#partners' },
+    { name: 'Join Initiative', href: '#contact' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-3 group">
-          {/* Intelligence Cube Logo */}
-          <div className="relative h-16 w-auto flex items-center">
-            <img 
-              src={`${BASE_PATH}/media/nav-logo-new.png`} 
-              alt="Intelligence Cubed" 
-              className="h-full w-auto object-contain"
-            />
-          </div>
-
-          {/* Divider */}
-          <div className="h-8 w-[1px] bg-zinc-300 mx-1"></div>
-
-          {/* CMU Logo */}
-          <div className="relative h-10 w-auto flex items-center">
-            <img 
-              src={`${BASE_PATH}/media/cmu-logo.jpg`} 
-              alt="Carnegie Mellon University" 
-              className="h-full w-auto object-contain mix-blend-multiply"
-            />
-          </div>
-        </a>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-zinc-600 hover:text-[#C41230] transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a 
-            href="#contact" 
-            className="px-5 py-2.5 bg-zinc-900 hover:bg-[#C41230] text-white text-sm font-semibold rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            Join Initiative
-          </a>
+    <nav className="fixed w-full z-50 flex flex-col">
+      {/* Top Bar: Logos */}
+      <div className="bg-[#C41230] py-3 px-6">
+        <div className="container mx-auto flex items-center justify-between">
+           <a href="#" className="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+             {/* Intelligence Cube Logo */}
+             <div className="relative h-12 w-auto flex items-center">
+               <img 
+                 src={`${BASE_PATH}/media/nav-logo-new.png`} 
+                 alt="Intelligence Cubed" 
+                 className="h-full w-auto object-contain brightness-0 invert"
+               />
+             </div>
+   
+             {/* Divider */}
+             <div className="h-8 w-[1px] bg-white/30 mx-1"></div>
+   
+             {/* CMU Logo */}
+             <div className="relative h-8 w-auto flex items-center">
+               <img 
+                 src={`${BASE_PATH}/media/cmu-logo.jpg`} 
+                 alt="Carnegie Mellon University" 
+                 className="h-full w-auto object-contain brightness-0 invert"
+               />
+             </div>
+           </a>
+           
+           {/* Mobile Toggle */}
+           <button 
+             className="md:hidden text-white"
+             onClick={() => setIsOpen(!isOpen)}
+           >
+             {isOpen ? <X size={24} /> : <Menu size={24} />}
+           </button>
         </div>
+      </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-zinc-900"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+      {/* Bottom Bar: Navigation */}
+      <div className={`transition-all duration-300 border-b border-zinc-100 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'}`}>
+        <div className="container mx-auto px-6">
+          <div className="hidden md:flex items-center gap-8 py-4">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  link.name === 'Join Initiative' 
+                    ? 'ml-auto px-5 py-2 bg-zinc-900 text-white rounded-full hover:bg-[#C41230]' 
+                    : 'text-zinc-600 hover:text-[#C41230]'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -85,7 +91,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-zinc-100"
+            className="md:hidden bg-white border-b border-zinc-100 shadow-lg"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -93,7 +99,11 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-zinc-600 hover:text-[#C41230] font-medium"
+                  className={`font-medium ${
+                    link.name === 'Join Initiative' 
+                      ? 'text-[#C41230] font-bold' 
+                      : 'text-zinc-600'
+                  }`}
                 >
                   {link.name}
                 </a>

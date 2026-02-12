@@ -6,59 +6,44 @@ import { BASE_PATH } from '@/lib/constants';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white">
-      {/* Background elements */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#C41230]/5 blur-[150px] rounded-full animate-pulse"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#6d28d9]/5 blur-[150px] rounded-full"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Header Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="order-1 lg:order-1"
+    <section className="relative min-h-screen flex flex-col pt-[136px] bg-white">
+      {/* Full-width Background Image */}
+      <div className="relative w-full h-[70vh] bg-zinc-100 overflow-hidden">
+        <img 
+          src={`${BASE_PATH}/media/hero-split.png`} 
+          alt="Modelverse Architecture" 
+          className="w-full h-full object-cover"
+        />
+        
+        {/* Overlay Card - Absolute on desktop, stacked on mobile */}
+        <div className="absolute bottom-0 left-0 w-full p-6 md:p-0 md:bottom-10 md:right-10 md:left-auto md:w-auto z-20 flex justify-center md:block">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="bg-white/90 backdrop-blur-md shadow-2xl p-8 rounded-2xl max-w-md md:max-w-lg border border-white/50"
           >
-            <img 
-              src={`${BASE_PATH}/media/hero-split.png`} 
-              alt="Modelverse Architecture" 
-              className="w-full max-w-2xl mx-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:scale-[1.02] transition-transform duration-500"
-            />
-          </motion.div>
-
-          {/* Right Column: Text & Buttons */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="order-2 lg:order-2 text-center lg:text-left"
-          >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-widest uppercase bg-zinc-100 border border-zinc-200 rounded-full text-[#C41230]">
+            <span className="inline-block mb-3 text-xs font-bold tracking-widest uppercase text-[#C41230]">
               Intelligence Cubed × Carnegie Mellon University
             </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[1.1] text-zinc-900">
+            <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-zinc-900 leading-tight">
               Modelverse Dev <br />
-              <span className="text-zinc-400">Initiative</span>
+              Initiative
             </h1>
-            <p className="max-w-xl mx-auto lg:mx-0 text-zinc-600 text-xl leading-relaxed mb-12">
+            <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-8">
               A collaborative research ecosystem pioneering decentralized intelligence and cost-effective AGI development.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
-              <a href="#vision" className="px-8 py-4 bg-black text-white font-bold rounded-full hover:bg-[#C41230] transition-all transform hover:scale-105 active:scale-95 shadow-xl">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#vision" className="px-6 py-3 bg-zinc-900 text-white font-bold rounded-full hover:bg-[#C41230] transition-colors text-center text-sm shadow-lg">
                 Explore Our Vision
               </a>
-              <a href="#team" className="px-8 py-4 bg-transparent border border-zinc-200 text-zinc-900 font-bold rounded-full hover:bg-zinc-50 transition-all">
+              <a href="#team" className="px-6 py-3 bg-white border border-zinc-200 text-zinc-900 font-bold rounded-full hover:bg-zinc-50 transition-colors text-center text-sm">
                 Meet our Team
               </a>
             </div>
           </motion.div>
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
-        <div className="w-px h-16 bg-gradient-to-b from-zinc-900 to-transparent mx-auto"></div>
       </div>
     </section>
   );
