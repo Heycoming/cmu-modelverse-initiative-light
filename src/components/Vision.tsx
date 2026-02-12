@@ -1,25 +1,25 @@
 'use client';
 
 import React from 'react';
-import { Database, ShieldAlert, Cpu, CheckCircle2, Mic2, Video, Image as ImageIcon, Music, Code2, Terminal, Layers, Globe, Zap, Smartphone, Palette, Code, Users } from 'lucide-react';
+import { Database, ShieldAlert, Cpu, CheckCircle2, Globe, GraduationCap, Scale, Users, FileCheck, Landmark } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BASE_PATH } from '@/lib/constants';
 
-// Detailed Pricing Card Implementation based on Revision3 requirements
-const PricingCard = ({ 
+// Refactored Initiative Card Implementation
+const InitiativeCard = ({ 
   title, 
-  price, 
   subtitle, 
-  icons, 
+  bullets, 
+  badges, 
   MainIcon,
-  variant = "default"
+  meta
 }: { 
   title: string, 
-  price: string, 
   subtitle: string, 
-  icons?: React.ElementType[], 
+  bullets: string[], 
+  badges?: string[],
   MainIcon: React.ElementType,
-  variant?: "default" | "common"
+  meta?: string
 }) => (
   <motion.div 
     whileHover={{ 
@@ -31,42 +31,55 @@ const PricingCard = ({
     initial={{ boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.02)" }}
     transition={{ duration: 0.2, ease: "easeInOut" }}
     className="w-full max-w-[860px] mx-auto mb-6 relative overflow-hidden rounded-[24px] bg-white border border-zinc-200 group cursor-pointer"
-    style={{ minHeight: '110px' }}
+    style={{ minHeight: '140px' }}
   >
     {/* Inner Glow Effect */}
     <div className="absolute inset-0 bg-gradient-to-br from-[#C41230]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-8 py-5 gap-6">
+    <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between h-full px-8 py-6 gap-6">
       {/* Left Column: Icon + Text */}
-      <div className="flex items-center gap-6 w-full md:w-auto">
+      <div className="flex items-start md:items-center gap-6 w-full">
         {/* Main Icon Area */}
         <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#C41230] flex items-center justify-center border border-[#C41230]/10 shadow-inner group-hover:scale-105 transition-transform duration-300">
           <MainIcon size={28} className="text-white" />
         </div>
 
         {/* Text Content */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center flex-grow">
           <h4 className="text-[20px] font-semibold text-zinc-900 leading-tight mb-1">{title}</h4>
-          <p className="text-[13px] text-zinc-500 font-normal leading-snug">{subtitle}</p>
+          <p className="text-[14px] text-zinc-500 font-medium leading-snug mb-3">{subtitle}</p>
           
-          {/* Tool Icons Row (if applicable) */}
-          {icons && icons.length > 0 && (
-            <div className="flex gap-1.5 mt-2.5">
-              {icons.map((Icon, i) => (
-                <div key={i} className="w-6 h-6 rounded-[6px] bg-zinc-100 flex items-center justify-center border border-zinc-200 group-hover:bg-[#C41230]/10 group-hover:border-[#C41230]/20 transition-all duration-300">
-                  <Icon size={12} className="text-zinc-500 group-hover:text-[#C41230]" />
-                </div>
+          {/* Bullets */}
+          <ul className="space-y-1 mb-3">
+            {bullets.map((bullet, i) => (
+              <li key={i} className="text-[13px] text-zinc-600 flex items-center gap-2">
+                <div className="w-1 h-1 rounded-full bg-[#C41230]" />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+
+          {/* Badges */}
+          {badges && badges.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-1">
+              {badges.map((badge, i) => (
+                <span key={i} className="px-2 py-0.5 text-[11px] font-medium text-zinc-500 bg-zinc-100 rounded-md border border-zinc-200">
+                  {badge}
+                </span>
               ))}
             </div>
           )}
         </div>
       </div>
 
-      {/* Right Column: Price */}
-      <div className="flex items-baseline gap-1.5 shrink-0 md:ml-auto">
-        <span className="text-[30px] font-bold text-zinc-900 tracking-tight">{price}</span>
-        <span className="text-[15px] text-zinc-400 font-normal">/ month</span>
-      </div>
+      {/* Right Column: Meta / Mechanism */}
+      {meta && (
+        <div className="hidden md:flex items-center shrink-0 md:ml-auto pl-4 border-l border-zinc-100 h-full min-h-[60px]">
+          <span className="text-[13px] font-medium text-[#C41230] tracking-wide uppercase bg-[#C41230]/5 px-3 py-1 rounded-full">
+            {meta}
+          </span>
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -202,37 +215,56 @@ const Vision = () => {
             ))}
           </div>
 
-          {/* Pricing Section - Light Theme */}
+          {/* Initiative Pillars Section */}
           <div className="relative py-20 px-6 rounded-[3rem] overflow-hidden bg-zinc-50/50">
             <div className="relative z-10">
               <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-medium text-zinc-900 tracking-tight mb-2">
-                  AI pricing is already segmented by user type
+                <h3 className="text-3xl md:text-4xl font-medium text-zinc-900 tracking-tight mb-4">
+                  A Public-Good Infrastructure for Intelligence
                 </h3>
+                <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+                  We are building an open ecosystem designed to democratize access, protect creator rights, and ensure transparent governance.
+                </p>
               </div>
 
               <div className="space-y-6">
-                <PricingCard 
-                  title="Media Creators" 
-                  price="$150+" 
-                  subtitle="(voice · video · image tools)" 
-                  icons={[Mic2, Video, ImageIcon, Music]} 
-                  MainIcon={Palette}
+                <InitiativeCard 
+                  title="Universal AI Access" 
+                  subtitle="Democratizing intelligence through education and industry enablement" 
+                  bullets={[
+                    "Subsidized compute credits for academic & nonprofit research",
+                    "Sliding-scale access for students and emerging markets",
+                    "Standardized APIs for seamless industry integration"
+                  ]}
+                  badges={["Education", "Nonprofit Grants", "Global Access"]}
+                  MainIcon={GraduationCap}
+                  meta="Open Opportunity"
                 />
-                <PricingCard 
-                  title="Engineers" 
-                  price="$100+" 
-                  subtitle="(dev + infra stack)" 
-                  icons={[Code2, Terminal, Layers, Cpu]} 
-                  MainIcon={Code}
+                
+                <InitiativeCard 
+                  title="IP & Creator Rights" 
+                  subtitle="Attribution-first architecture with verifiable provenance" 
+                  bullets={[
+                    "Immutable on-chain registry for data provenance and licensing",
+                    "Granular opt-out mechanisms for content creators",
+                    "Fair revenue sharing rails for contributed datasets"
+                  ]}
+                  badges={["Provenance", "Licensing", "Fair Share"]}
+                  MainIcon={FileCheck}
+                  meta="Attribution First"
                 />
-                <PricingCard 
-                  title="Common Users" 
-                  price="~$200+" 
-                  subtitle="Multimodal bundles → high switching cost" 
-                  icons={[]} // Common users card typically emphasizes the text
-                  MainIcon={Users}
-                  variant="common"
+                
+                <InitiativeCard 
+                  title="Community Ownership" 
+                  subtitle="Governance by the people building the future" 
+                  bullets={[
+                    "Transparent council for protocol upgrades and policy decisions",
+                    "Open standards development for interoperability",
+                    "Shared ownership models for infrastructure providers"
+                  ]}
+                  badges={["Governance", "Transparency", "Open Standards"]}
+                  MainIcon={Landmark}
+                  meta="Shared Governance"
                 />
               </div>
             </div>
