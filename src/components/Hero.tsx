@@ -26,8 +26,9 @@ const Hero = () => {
             <span className="inline-block mb-3 text-xs font-bold tracking-widest uppercase text-[#C41230]">
               Intelligence Cubed × Carnegie Mellon University
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight text-zinc-900 leading-tight whitespace-nowrap">
-              Modelverse Dev Initiative
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight text-zinc-900 leading-tight">
+              Modelverse Dev <br />
+              Initiative
             </h1>
             <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-8">
               A collaborative research ecosystem pioneering decentralized intelligence and cost-effective AGI development.
