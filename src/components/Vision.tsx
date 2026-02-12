@@ -25,36 +25,36 @@ const PricingCard = ({
     whileHover={{ 
       y: 0,
       scale: 1.0,
-      boxShadow: "0 20px 40px -10px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05)"
+      boxShadow: "0 20px 40px -10px rgba(196,18,48,0.1), 0 0 0 1px rgba(196,18,48,0.05)"
     }}
     whileTap={{ y: 1 }}
     initial={{ boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.02)" }}
     transition={{ duration: 0.2, ease: "easeInOut" }}
-    className="w-full max-w-[860px] mx-auto mb-6 relative overflow-hidden rounded-[24px] bg-[#2E2E35]/95 backdrop-blur-md border border-white/5 group cursor-pointer"
+    className="w-full max-w-[860px] mx-auto mb-6 relative overflow-hidden rounded-[24px] bg-white border border-zinc-200 group cursor-pointer"
     style={{ minHeight: '110px' }}
   >
     {/* Inner Glow Effect */}
-    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[#C41230]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-8 py-5 gap-6">
       {/* Left Column: Icon + Text */}
       <div className="flex items-center gap-6 w-full md:w-auto">
         {/* Main Icon Area */}
-        <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center border border-white/10 shadow-inner group-hover:scale-105 transition-transform duration-300">
-          <MainIcon size={28} className="text-white/90" />
+        <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#C41230] flex items-center justify-center border border-[#C41230]/10 shadow-inner group-hover:scale-105 transition-transform duration-300">
+          <MainIcon size={28} className="text-white" />
         </div>
 
         {/* Text Content */}
         <div className="flex flex-col justify-center">
-          <h4 className="text-[20px] font-semibold text-white leading-tight mb-1">{title}</h4>
-          <p className="text-[13px] text-[#B8B8C0] font-normal leading-snug">{subtitle}</p>
+          <h4 className="text-[20px] font-semibold text-zinc-900 leading-tight mb-1">{title}</h4>
+          <p className="text-[13px] text-zinc-500 font-normal leading-snug">{subtitle}</p>
           
           {/* Tool Icons Row (if applicable) */}
           {icons && icons.length > 0 && (
             <div className="flex gap-1.5 mt-2.5">
               {icons.map((Icon, i) => (
-                <div key={i} className="w-6 h-6 rounded-[6px] bg-zinc-700/50 flex items-center justify-center border border-white/5 group-hover:bg-zinc-600/50 group-hover:border-white/20 transition-all duration-300">
-                  <Icon size={12} className="text-zinc-400 group-hover:text-zinc-200" />
+                <div key={i} className="w-6 h-6 rounded-[6px] bg-zinc-100 flex items-center justify-center border border-zinc-200 group-hover:bg-[#C41230]/10 group-hover:border-[#C41230]/20 transition-all duration-300">
+                  <Icon size={12} className="text-zinc-500 group-hover:text-[#C41230]" />
                 </div>
               ))}
             </div>
@@ -64,8 +64,8 @@ const PricingCard = ({
 
       {/* Right Column: Price */}
       <div className="flex items-baseline gap-1.5 shrink-0 md:ml-auto">
-        <span className="text-[30px] font-bold text-white tracking-tight">{price}</span>
-        <span className="text-[15px] text-[#8E8E95] font-normal">/ month</span>
+        <span className="text-[30px] font-bold text-zinc-900 tracking-tight">{price}</span>
+        <span className="text-[15px] text-zinc-400 font-normal">/ month</span>
       </div>
     </div>
   </motion.div>
@@ -202,18 +202,11 @@ const Vision = () => {
             ))}
           </div>
 
-          {/* Pricing Section - Dark Glassmorphism */}
-          <div className="relative py-20 px-6 rounded-[3rem] overflow-hidden">
-            {/* Dark Background */}
-            <div className="absolute inset-0 bg-[#0A0A0B]">
-              <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1E] to-[#050505] opacity-80"></div>
-              {/* Glow Effects */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/20 blur-[120px] rounded-full"></div>
-            </div>
-
+          {/* Pricing Section - Light Theme */}
+          <div className="relative py-20 px-6 rounded-[3rem] overflow-hidden bg-zinc-50/50">
             <div className="relative z-10">
               <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-2">
+                <h3 className="text-3xl md:text-4xl font-medium text-zinc-900 tracking-tight mb-2">
                   AI pricing is already segmented by user type
                 </h3>
               </div>

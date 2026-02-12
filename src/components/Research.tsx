@@ -958,7 +958,7 @@ const Research = () => {
           <div className="h-1 w-20 bg-[#C41230]"></div>
         </div>
 
-        <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+        <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar overflow-x-hidden">
           {publications.map((pub, i) => (
             <div key={i} className="group border-b border-zinc-100 pb-6 hover:bg-zinc-50 p-4 -mx-4 rounded-lg transition-colors">
               <p className="text-zinc-800 text-lg font-medium mb-1 group-hover:text-[#C41230] transition-colors leading-relaxed">
