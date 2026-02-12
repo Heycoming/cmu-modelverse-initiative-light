@@ -75,7 +75,6 @@ const Team = () => {
                     href={member.links.website || member.links.linkedin} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="hover:text-[#C41230] transition-colors"
                   >
                     {member.name}
                   </a>
@@ -117,7 +116,6 @@ const Team = () => {
                     href={member.links.website || member.links.linkedin} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="hover:text-[#C41230] transition-colors"
                   >
                     {member.name}
                   </a>
@@ -161,7 +159,6 @@ const Team = () => {
                       href={fellow.link} 
                       target="_blank" 
                       rel="noreferrer"
-                      className="hover:text-[#C41230] transition-colors hover:underline decoration-1 underline-offset-4"
                     >
                       {fellow.name}
                     </a>
