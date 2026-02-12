@@ -28,12 +28,24 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
-          {/* Increased size for the nav logo */}
+          {/* Intelligence Cube Logo */}
           <div className="relative h-16 w-auto flex items-center">
             <img 
               src={`${BASE_PATH}/media/nav-logo-new.png`} 
-              alt="i3 x CMU Logo" 
+              alt="Intelligence Cubed" 
               className="h-full w-auto object-contain"
+            />
+          </div>
+
+          {/* Divider */}
+          <div className="h-8 w-[1px] bg-zinc-300 mx-1"></div>
+
+          {/* CMU Logo */}
+          <div className="relative h-10 w-auto flex items-center">
+            <img 
+              src={`${BASE_PATH}/media/cmu-logo.jpg`} 
+              alt="Carnegie Mellon University" 
+              className="h-full w-auto object-contain mix-blend-multiply"
             />
           </div>
         </a>
