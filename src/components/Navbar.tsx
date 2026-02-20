@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: 'Team', href: '#team' },
     { name: 'Research', href: '#research' },
     { name: 'Partners', href: '#partners' },
-    { name: 'Join Initiative', href: '#contact' },
+    { name: 'Join Initiative', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdH09t6URK6V6NNzBqQQqhdM0i5MWB22J63IbpcE9pWQy-19Q/viewform' },
   ];
 
   return (
