@@ -34,7 +34,7 @@ const Partners = () => {
     { name: "Taisu", logo: baseUrl + "assets/images/logos/investor_logo/taisu.svg", href: "https://www.taisu.io/" },
     { name: "BNB Chain", logo: baseUrl + "assets/images/logos/investor_logo/BNB%20Chain_id5Kz-gfh2_1.svg", href: "https://www.bnbchain.org/" },
     { name: "Solana", logo: baseUrl + "assets/images/logos/investor_logo/Solana_idN473ehUb_1.png", href: "https://solana.com/" },
-    { name: "Amber DSRV", logo: baseUrl + "assets/images/logos/investor_logo/amber_dsrv.png", href: "https://www.ambergroup.io/" },
+    { name: "Amber DSRV", logo: baseUrl + "assets/images/logos/investor_logo/amber_dsrv.png", href: "https://amber.ac/" },
     { name: "Cardano", logo: baseUrl + "assets/images/logos/investor_logo/Cardano.png", href: "https://cardano.org/" },
     { name: "Cloudflare", logo: baseUrl + "assets/images/logos/investor_logo/cloudflare.png", href: "https://www.cloudflare.com/" },
     { name: "Google Cloud", logo: baseUrl + "assets/images/logos/investor_logo/Google_Cloud.png", href: "https://cloud.google.com/" },

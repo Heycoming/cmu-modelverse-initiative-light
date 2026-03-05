@@ -44,7 +44,7 @@ const Navbar = () => {
              <div className="h-8 w-[1px] bg-white/30 mx-1"></div>
    
              {/* Intelligence Cube Logo */}
-             <a href="https://intelligence3.io/" target="_blank" rel="noreferrer" className="relative h-12 w-auto flex items-center">
+             <a href="https://intelligencecubed.io/" target="_blank" rel="noreferrer" className="relative h-12 w-auto flex items-center">
                <img 
                  src={`${BASE_PATH}/media/nav-logo-new.png`} 
                  alt="Intelligence Cubed" 
