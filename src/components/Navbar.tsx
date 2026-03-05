@@ -30,28 +30,28 @@ const Navbar = () => {
       {/* Top Bar: Logos */}
       <div className="bg-[#bb0000] py-3 px-6">
         <div className="container mx-auto flex items-center justify-between">
-           <a href="#" className="flex items-center gap-4 px-4 py-2">
-             {/* Intelligence Cube Logo */}
-             <div className="relative h-12 w-auto flex items-center">
-               <img 
-                 src={`${BASE_PATH}/media/nav-logo-new.png`} 
-                 alt="Intelligence Cubed" 
-                 className="h-full w-auto object-contain brightness-0 invert"
-               />
-             </div>
-   
-             {/* Divider */}
-             <div className="h-8 w-[1px] bg-white/30 mx-1"></div>
-   
+           <div className="flex items-center gap-4 px-4 py-2">
              {/* CMU SCS Logo */}
-             <div className="relative h-10 w-auto flex items-center">
+             <a href="https://www.scs.cmu.edu/" target="_blank" rel="noreferrer" className="relative h-10 w-auto flex items-center">
                <img 
                  src={`${BASE_PATH}/media/cmu_scs_logo.png`} 
                  alt="Carnegie Mellon University School of Computer Science" 
                  className="h-full w-auto object-contain"
                />
-             </div>
-           </a>
+             </a>
+   
+             {/* Divider */}
+             <div className="h-8 w-[1px] bg-white/30 mx-1"></div>
+   
+             {/* Intelligence Cube Logo */}
+             <a href="https://intelligence3.io/" target="_blank" rel="noreferrer" className="relative h-12 w-auto flex items-center">
+               <img 
+                 src={`${BASE_PATH}/media/nav-logo-new.png`} 
+                 alt="Intelligence Cubed" 
+                 className="h-full w-auto object-contain brightness-0 invert"
+               />
+             </a>
+           </div>
            
            {/* Mobile Toggle */}
            <button 
