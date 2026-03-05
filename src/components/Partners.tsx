@@ -67,7 +67,7 @@ const Partners = () => {
           <h3 className="text-3xl font-bold text-zinc-900 mb-12 text-center">Investors & Partners</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
             {investors.map((item, i) => (
-              <PartnerCard key={i} name={item.name} logo={item.logo} />
+              <PartnerCard key={i} name={item.name} logo={item.logo} href={item.href} />
             ))}
           </div>
         </div>
