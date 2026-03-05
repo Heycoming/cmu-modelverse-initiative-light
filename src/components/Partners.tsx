@@ -31,7 +31,7 @@ const Partners = () => {
   const baseUrl = "https://intelligencecubed.io/";
   
   const investors = [
-    { name: "Taisu", logo: baseUrl + "assets/images/logos/investor_logo/taisu.svg", href: "https://www.taisu.ventures/" },
+    { name: "Taisu", logo: baseUrl + "assets/images/logos/investor_logo/taisu.svg", href: "https://www.taisu.io/" },
     { name: "BNB Chain", logo: baseUrl + "assets/images/logos/investor_logo/BNB%20Chain_id5Kz-gfh2_1.svg", href: "https://www.bnbchain.org/" },
     { name: "Solana", logo: baseUrl + "assets/images/logos/investor_logo/Solana_idN473ehUb_1.png", href: "https://solana.com/" },
     { name: "Amber DSRV", logo: baseUrl + "assets/images/logos/investor_logo/amber_dsrv.png", href: "https://www.ambergroup.io/" },
@@ -40,8 +40,8 @@ const Partners = () => {
     { name: "Google Cloud", logo: baseUrl + "assets/images/logos/investor_logo/Google_Cloud.png", href: "https://cloud.google.com/" },
     { name: "Microsoft", logo: baseUrl + "assets/images/logos/investor_logo/Microsoft_Logo_0.svg", href: "https://www.microsoft.com/" },
     { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", href: "https://aws.amazon.com/" },
-    { name: "One Piece Lab", logo: baseUrl + "assets/images/logos/investor_logo/one_piece_lab.png", href: "https://onepiecelabs.io/" },
-    { name: "Alliance DAO", logo: baseUrl + "assets/images/logos/investor_logo/alliance_dao.png", href: "https://www.alliance-dao.com/" },
+    { name: "One Piece Lab", logo: baseUrl + "assets/images/logos/investor_logo/one_piece_lab.png", href: "https://www.onepiecelabs.xyz/" },
+    { name: "Alliance DAO", logo: baseUrl + "assets/images/logos/investor_logo/alliance_dao.png", href: "https://alliance.xyz/" },
     { name: "Orange DAO", logo: baseUrl + "assets/images/logos/investor_logo/orange_dao.png", href: "https://www.orangedao.xyz/" }
   ];
 
