@@ -42,7 +42,7 @@ const Team = () => {
   ];
 
   const fellows = [
-    { name: "Xuandong Zhao", institution: "postdoc, UC Berkeley RDI", link: "https://xuandongzhao.github.io/" },
+    { name: "Xuandong Zhao", institution: "postdoc, UC Berkeley BAIR and RDI", link: "https://xuandongzhao.github.io/" },
     { name: "Yuejiang Liu", institution: "postdoc, Stanford AI Lab", link: "https://scholar.google.com/citations?user=Xi-B5WIAAAAJ&hl=en" },
     { name: "Yaqi Xie", institution: "postdoc, CMU Robotics Institute", link: "https://scholar.google.com/citations?user=lBCCo0EAAAAJ&hl=en" },
     { name: "Shiyi Du", institution: "Ph.D., CMU Computational Biology", link: "https://scholar.google.com/citations?user=rVKkjikAAAAJ&hl=en" },
@@ -53,7 +53,8 @@ const Team = () => {
     { name: "Jason Dou", institution: "postdoc, Harvard Medical School", link: "https://sites.google.com/site/douxiaotianjason/" },
     { name: "Peter Wang", institution: "postdoc, Caltech", link: "https://pwang.pw/" },
     { name: "Shi Feng", institution: "Ph.D., Harvard CS", link: "https://fengshi.link/" },
-    { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy", link: "https://scholar.google.com/citations?user=o9EmMaEAAAAJ" }
+    { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy", link: "https://scholar.google.com/citations?user=o9EmMaEAAAAJ" },
+    { name: "Xin Luo", institution: "Ph.D., UM Bioinformatics", link: "https://medresearch.umich.edu/profile/xin-luo" }
   ];
 
   return (
