@@ -54,7 +54,8 @@ const Team = () => {
     { name: "Peter Wang", institution: "postdoc, Caltech", link: "https://pwang.pw/" },
     { name: "Shi Feng", institution: "Ph.D., Harvard CS", link: "https://fengshi.link/" },
     { name: "Xueying Ding", institution: "Ph.D., CMU Machine Learning & Public Policy", link: "https://scholar.google.com/citations?user=o9EmMaEAAAAJ" },
-    { name: "Xin Luo", institution: "Ph.D., UM Bioinformatics", link: "https://medresearch.umich.edu/profile/xin-luo" }
+    { name: "Xin Luo", institution: "Ph.D., UM Bioinformatics", link: "https://medresearch.umich.edu/profile/xin-luo" },
+    { name: "Linfeng Zhao", institution: "postdoc, Stanford University", link: "https://lfzhao.com/" }
   ];
 
   return (
