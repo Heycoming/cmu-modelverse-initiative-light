@@ -945,6 +945,48 @@ const Research = () => {
       title: "A Large Dataset of Macaque V1 Responses to Natural Images Revealed Complexity in V1 Neural Codes.",
       journal: "Computational and Systems Neuroscience (Cosyne)",
       year: "2024"
+    },
+    {
+      authors: "Linfeng Zhao, Willie McClinton*, Aidan Curtis*, Nishanth Kumar, Tom Silver, Leslie Kaelbling, Lawson L.S. Wong.",
+      title: "Seeing is Believing: Belief-Space Planning with Foundation Models as Uncertainty Estimators.",
+      journal: "arXiv preprint",
+      year: "2025"
+    },
+    {
+      authors: "Nishanth Kumar*, Tom Silver*, Willie McClinton, Linfeng Zhao, Stephen Proul, Tomás Lozano-Pérez, Leslie Kaelbling, Jennifer Barry.",
+      title: "Practice Makes Perfect: Planning to Learn Skill Parameter Policies.",
+      journal: "Robotics: Science and Systems (RSS)",
+      year: "2024"
+    },
+    {
+      authors: "Linfeng Zhao*, Hongyu Li*, Taskin Padir, Huaizu Jiang†, Lawson L.S. Wong†.",
+      title: "E(2)-Equivariant Graph Planning for Navigation.",
+      journal: "IEEE RA-L / IROS 2024 (Oral)",
+      year: "2024"
+    },
+    {
+      authors: "Linfeng Zhao, Xupeng Zhu*, Lingzhi Kong*, Robin Walters, Lawson L.S. Wong.",
+      title: "Integrating Symmetry into Differentiable Planning with Steerable Convolutions.",
+      journal: "International Conference on Learning Representations (ICLR)",
+      year: "2023"
+    },
+    {
+      authors: "Linfeng Zhao, Huazhe Xu, Lawson L.S. Wong.",
+      title: "Scaling up and Stabilizing Differentiable Planning with Implicit Differentiation.",
+      journal: "International Conference on Learning Representations (ICLR)",
+      year: "2023"
+    },
+    {
+      authors: "Linfeng Zhao, Lingzhi Kong, Robin Walters, Lawson L.S. Wong.",
+      title: "Toward Compositional Generalization in Object-Oriented World Modeling.",
+      journal: "International Conference on Machine Learning (ICML, Long Presentation, top 2%)",
+      year: "2022"
+    },
+    {
+      authors: "Fan Xie*, Alexander Chowdhury*, M. Clara De Paolis Kaluza, Linfeng Zhao, Lawson L.S. Wong, Rose Yu.",
+      title: "Deep Imitation Learning for Bimanual Robotic Manipulation.",
+      journal: "Advances in Neural Information Processing Systems (NeurIPS)",
+      year: "2020"
     }
   ];
 
