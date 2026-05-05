@@ -30,7 +30,7 @@ const Team = () => {
     {
       name: "Prof. Tai-Sing Lee",
       role: "Director, Lee Lab for Biological & Machine Intelligence, CMU",
-      bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. AI Mentor to Andrew Ng (Co-Founder of Google Brain/DeepMind). Trained leaders at DeepMind, OpenAI, Google, and Berkeley. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
+      bio: "Full Professor of Computer Science and Neuroscience at CMU. Dual PhDs from Harvard and MIT. Trained leaders at DeepMind, OpenAI, Google, and Berkeley, Yale etc. Recipient of McDonnell-Pew Young Investigator Award, NSF CAREER Award, and ICCV Helmholtz Prize.",
       links: { website: "https://csd.cmu.edu/people/faculty/taising-lee" }
     },
     {
